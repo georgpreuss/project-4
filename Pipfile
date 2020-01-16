@@ -8,14 +8,13 @@ pylint = "*"
 flake8 = "*"
 
 [packages]
-django = "*"
+django = "==2.2.9"
 psycopg2-binary = "*"
 pyjwt = "*"
 djangorestframework = "*"
 django-csvimport = "*"
 pillow = "*"
 pylint = "*"
-travels = "*"
 numpy = "*"
 
 [requires]
