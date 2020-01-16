@@ -262,7 +262,7 @@ const Profile = (props) => {
     // use Auth to get your profile!
     // axios.get(`api/profile/${Auth.getUserId()}`)
     window.addEventListener('scroll', handleScroll)
-    axios.get(`api/profile/${props.match.params.id}`, {
+    axios.get(`api/profile/${props.match.params.id}/`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(resp => {
