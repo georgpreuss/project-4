@@ -29,7 +29,8 @@ const Login = ({ props }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('/api/login', login.data)
+    // axios.post('/api/login', login.data)
+    axios.post('/api/login', login.data, { headers: { 'Authorization': '' } })
       .then(resp => {
         Auth.setToken(resp.data.token)
         notify(resp.data.message)

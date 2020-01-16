@@ -60,7 +60,7 @@ const App = () => {
       <div id="searchbar" className={searchModal === true ? 'modal is-active' : 'modal'}>
         <div className="modal-background" onClick={toggleSearch}></div>
         <div className="modal-content modal-stats">
-          <SearchBar toggleSearch={toggleSearch} />
+          <SearchBar toggleSearch={toggleSearch} limitSearch={searchModal}/>
         </div>
         <button className="modal-close is-large" aria-label="close" onClick={toggleSearch}></button>
       </div>

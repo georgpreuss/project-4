@@ -3,7 +3,7 @@ import axios from 'axios'
 import Auth from '../lib/Auth'
 import UserCard from './UserCard'
 
-const SearchBar = ({toggleSearch}) => {
+const SearchBar = ({ toggleSearch, searchModal }) => {
   const [data, setData] = useState([])
   const [searchBar, setSearchBar] = useState('')
 
@@ -18,7 +18,7 @@ const SearchBar = ({toggleSearch}) => {
         // console.log(response.data)
       })
       .catch(error => console.log(error))
-  }, [])
+  }, [searchModal])
 
 
   function handleSearchChange(e) {

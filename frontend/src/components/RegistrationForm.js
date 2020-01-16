@@ -31,7 +31,8 @@ const Register = ({ toggleRegistration, toggleLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('/api/register', register.data)
+    // axios.post('/api/register', register.data)
+    axios.post('/api/register', register.data, { headers: { 'Authorization': '' } })
       .then(() => {
         notify()
         toggleRegistration()
