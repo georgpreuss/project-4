@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import MapGL, { Marker, Popup } from 'react-map-gl'
 import ReactFilestack from 'filestack-react'
-import { fileloaderKey } from '../config/environment'
+// import { fileloaderKey } from '../config/environment'
 import axios from 'axios'
 import Auth from '../lib/Auth'
 import { toast } from 'react-toastify'
@@ -11,6 +11,9 @@ import { toast } from 'react-toastify'
 import Mask from '../images/mask-dark-gradient.png'
 import GroupForm from './GroupForm'
 import GroupMembers from './GroupMembers'
+
+require('dotenv').config()
+const fileloaderKey = process.env.FS_KEY
 
 // this is a public key but maybe change to different key and put in .env?
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2VvcmdwIiwiYSI6ImNrMzM1bnN0azBuY2IzZnBiZ3d2eDA5dGQifQ.Ym1lHqYUfUUu2m897J4hcg' // Set your mapbox token here
@@ -558,7 +561,7 @@ const IndividualGroup = (props) => {
                     {/* Class creates an oval. Look to change this so all propics are circles. */}
                     <img className="is-rounded" src={!group.image ? 'https://bulma.io/images/placeholders/128x128.png' && profile.image : group.image} />
                   </figure>
-                  <i className={scroll < 250 ? 'fas fa-chevron-down is-size-3 down' : 'fas fa-chevron-down is-size-3 down gone'}></i>
+                  <div className={scroll < 100 ? 'down-arrow down bounce' : 'down-arrow down gone'}></div>
                 </div>
               )}
               onSuccess={handleImageUpload}

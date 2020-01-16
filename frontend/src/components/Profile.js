@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import MapGL, { Marker, Popup } from 'react-map-gl'
 import ReactFilestack from 'filestack-react'
-import { fileloaderKey } from '../config/environment'
+// import { fileloaderKey } from '../config/environment'
 import axios from 'axios'
 import Auth from '../lib/Auth'
 
@@ -12,6 +12,9 @@ import Settings from './SettingsForm'
 import { toast } from 'react-toastify'
 import UserContext from './UserContext'
 import 'react-toastify/dist/ReactToastify.css'
+
+require('dotenv').config()
+const fileloaderKey = process.env.FS_KEY
 
 // this is a public key but maybe change to different key and put in .env?
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2VvcmdwIiwiYSI6ImNrMzM1bnN0azBuY2IzZnBiZ3d2eDA5dGQifQ.Ym1lHqYUfUUu2m897J4hcg' // Set your mapbox token here
