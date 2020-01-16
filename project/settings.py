@@ -1,3 +1,5 @@
+import django_heroku
+
 """
 Django settings for project project.
 
@@ -139,3 +141,5 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'jwt_auth.User'
+
+django_heroku.settings(locals())

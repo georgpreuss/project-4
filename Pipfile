@@ -16,6 +16,7 @@ django-csvimport = "*"
 pillow = "*"
 pylint = "*"
 numpy = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
